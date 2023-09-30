@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Mänguväli : MonoBehaviour
@@ -8,6 +7,16 @@ public class Mänguväli : MonoBehaviour
     public static int laius = 10;
     public static int kõrgus = 20;
     public static Transform[,] ruudustik = new Transform[laius, kõrgus];
+
+    static readonly Vector2[] _keelatudRuudud = new[]
+    {
+        new Vector2(0f, 3f),
+        new Vector2(0f, 4f),
+        new Vector2(0f, 5f),
+        new Vector2(9f, 3f),
+        new Vector2(9f, 4f),
+        new Vector2(9f, 5f)
+    };
 
     // Ei lase koordinaatidel olla ujukomaarv
     public static Vector2 ÜmardaVector2(Vector2 vektor)
@@ -19,9 +28,10 @@ public class Mänguväli : MonoBehaviour
     // Kontrollib, kas vektor asub piiride sees ja kõrgemal kui alumine ots.
     public static bool Piirides(Vector2 asend) 
     {
-        return (int)asend.x >= 0 &&
-            (int)asend.x < laius &&
-            (int)asend.y >= 0;
+        return !_keelatudRuudud.Contains(asend) &&
+               (int)asend.x >= 0 &&
+               (int)asend.x < laius &&
+               (int)asend.y >= 0;
         // Meil võib olla vaja implementeerida kontroll, kus vaadeldakse ka y koordinaadi sobivust (ehk isegi spetsiifilisi ridu), kuna meie mänguväli on mitmeti piiratud
     }
 
