@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4499792405839025254}
   - component: {fileID: -579819707972552761}
   - component: {fileID: -821644853148859129}
-  - component: {fileID: 679645277045323459}
+  - component: {fileID: -2561966644645946110}
   m_Layer: 0
   m_Name: I-klots1
   m_TagString: Untagged
@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationCooldown: 0.6
---- !u!60 &679645277045323459
-PolygonCollider2D:
+--- !u!61 &-2561966644645946110
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,7 +95,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -105,14 +105,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4}
+  m_EdgeRadius: 0
 --- !u!1 &2594725762711467975
 GameObject:
   m_ObjectHideFlags: 0
