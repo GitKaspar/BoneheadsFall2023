@@ -6,7 +6,7 @@ using UnityEngine;
 public class Grupp : MonoBehaviour
 {
     // Viimane gravitatsiooninükke aeg
-    float viimaneKukkumine = 0;
+    // float viimaneKukkumine = 0;
 
     void Start()
     {
@@ -21,6 +21,12 @@ public class Grupp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      // Laenan Patrick'u koodi
+
+
+        /*
+         * JÄRGNEV ON KLOONI KLOTSI LIIGUTAMISE KOOD. POLE VAJA.
+         * 
         // Liigub vasakule
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -95,6 +101,7 @@ public class Grupp : MonoBehaviour
 
             viimaneKukkumine = Time.time;
         }
+        */
     }
 
     bool KasOnSobivAsendRuudustikus()
