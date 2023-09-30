@@ -8,8 +8,8 @@ using UnityEngine;
 public class FollowMouse : MonoBehaviour
 {
     private bool isFollowing = false;
-
-    public GameObject klots;
+    private float lastRotationTime;
+    public float rotationCooldown = 0.6f; // Adjust this cooldown time as needed
 
     void Update()
     {
@@ -21,14 +21,17 @@ public class FollowMouse : MonoBehaviour
             // Set the GameObject's position to the mouse position
             transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
 
-            if (Input.GetMouseButtonDown(1)) // Check for right-click
+            float scrollDelta = Input.GetAxis("Mouse ScrollWheel");
+
+            // Check for scroll wheel input and cooldown time
+            if (scrollDelta != 0f && Time.time - lastRotationTime >= rotationCooldown)
             {
-                // Rotate the GameObject 90 degrees clockwise
-                transform.Rotate(Vector3.forward * 90f);
+                // Rotate the GameObject based on scroll direction
+                float rotationAmount = scrollDelta > 0f ? 90f : -90f;
+                transform.Rotate(Vector3.forward * rotationAmount);
+                lastRotationTime = Time.time; // Update the last rotation time
             }
         }
-
-
     }
 
     void OnMouseDown()
