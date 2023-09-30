@@ -8,7 +8,7 @@ public class Mänguväli : MonoBehaviour
     public static int kõrgus = 20;
     public static Transform[,] ruudustik = new Transform[laius, kõrgus];
 
-    static readonly Vector2[] _keelatudRuudud = new[]
+    public static readonly Vector2[] _keelatudRuudud = new[]
     {
         new Vector2(0f, 3f),
         new Vector2(0f, 4f),
@@ -32,6 +32,7 @@ public class Mänguväli : MonoBehaviour
                (int)asend.x >= 0 &&
                (int)asend.x < laius &&
                (int)asend.y >= 0;
+    
         // Meil võib olla vaja implementeerida kontroll, kus vaadeldakse ka y koordinaadi sobivust (ehk isegi spetsiifilisi ridu), kuna meie mänguväli on mitmeti piiratud
     }
 
