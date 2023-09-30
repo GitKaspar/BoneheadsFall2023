@@ -48,7 +48,8 @@ public class FollowMouse : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Toggle following when the GameObject is clicked
-        isFollowing = !isFollowing;
+        if (_grupp.KasOnSobivAsendRuudustikus())
+            // Toggle following when the GameObject is clicked
+            isFollowing = !isFollowing;
     }
 }
