@@ -16,6 +16,7 @@ public class FollowMouse : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             // Set the GameObject's position to the mouse position
+            // Snap siin: hiire positsioon ümardatakse
             Vector2 ümardatud = Mänguväli.ÜmardaVector2(new Vector2(mousePosition.x, mousePosition.y));
             transform.position = new Vector3(ümardatud.x, ümardatud.y, transform.position.z);
 
