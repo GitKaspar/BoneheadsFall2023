@@ -7,6 +7,12 @@ public class FollowMouse : MonoBehaviour
     private bool isFollowing = false;
     private float lastRotationTime;
     public float rotationCooldown = 0.1f; // Adjust this cooldown time as needed
+    private Grupp _grupp;
+
+    private void Start()
+    {
+        _grupp = GetComponent<Grupp>();
+    }
 
     void Update()
     {
@@ -17,8 +23,15 @@ public class FollowMouse : MonoBehaviour
 
             // Set the GameObject's position to the mouse position
             // Snap siin: hiire positsioon ümardatakse
-            Vector2 ümardatud = Mänguväli.ÜmardaVector2(new Vector2(mousePosition.x, mousePosition.y));
-            transform.position = new Vector3(ümardatud.x, ümardatud.y, transform.position.z);
+            if (_grupp.KasOnSobivAsendRuudustikus())
+            {
+                Vector2 ümardatud = Mänguväli.ÜmardaVector2(new Vector2(mousePosition.x, mousePosition.y));
+                transform.position = new Vector3(ümardatud.x, ümardatud.y, transform.position.z);
+            }
+            else
+            {
+                transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+            }
 
             float scrollDelta = Input.GetAxis("Mouse ScrollWheel");
 
@@ -42,7 +55,8 @@ public class FollowMouse : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Toggle following when the GameObject is clicked
-        isFollowing = !isFollowing;
+        if (_grupp.KasOnSobivAsendRuudustikus())
+            // Toggle following when the GameObject is clicked
+            isFollowing = !isFollowing;
     }
 }
