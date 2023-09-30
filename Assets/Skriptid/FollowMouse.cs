@@ -30,6 +30,13 @@ public class FollowMouse : MonoBehaviour
                 transform.Rotate(Vector3.forward * rotationAmount);
                 lastRotationTime = Time.time; // Update the last rotation time
             }
+            /*
+             * Probleem: 
+            if (Input.GetMouseButtonDown(0))
+            {
+                FindObjectOfType<Spawner>().SpawnNext();
+            }
+            */
         }
     }
 
