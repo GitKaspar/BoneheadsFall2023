@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 530401607025028742}
+  - component: {fileID: 6158476741906135479}
   m_Layer: 0
   m_Name: S-klots1
   m_TagString: Untagged
@@ -119,6 +120,18 @@ Transform:
   - {fileID: 934571794963595348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6158476741906135479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959947475972769817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d552285f51557b4c8b67023fc96f4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4063812922333461575
 GameObject:
   m_ObjectHideFlags: 0
