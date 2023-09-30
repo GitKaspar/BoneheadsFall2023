@@ -9,7 +9,7 @@ public class FollowMouse : MonoBehaviour
 {
     private bool isFollowing = false;
     private float lastRotationTime;
-    public float rotationCooldown = 0.6f; // Adjust this cooldown time as needed
+    public float rotationCooldown = 0.2f; // Adjust this cooldown time as needed
 
     void Update()
     {
