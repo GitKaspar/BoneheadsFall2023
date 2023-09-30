@@ -24,11 +24,22 @@ public class Mänguväli : MonoBehaviour
         return new Vector2(Mathf.Round(vektor.x),
             Mathf.Round(vektor.y));
     }
+    
+    static bool onKeelualas(Vector2 asend)
+    {
+        foreach (var keelatudRuut in _keelatudRuudud)
+        {
+            if (keelatudRuut != asend) continue;
+            print("Keelatud ruut asendis " + asend);
+            return true;
+        }
+        return false;
+    }
 
     // Kontrollib, kas vektor asub piiride sees ja kõrgemal kui alumine ots.
     public static bool Piirides(Vector2 asend) 
     {
-        return !_keelatudRuudud.Contains(asend) &&
+        return !onKeelualas(asend) &&
                (int)asend.x >= 0 &&
                (int)asend.x < laius &&
                (int)asend.y >= 0;
