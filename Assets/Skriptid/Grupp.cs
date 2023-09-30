@@ -115,7 +115,7 @@ public class Grupp : MonoBehaviour
             if (!Mänguväli.Piirides(vektor)) 
             {return false;}
 
-            // Kas blokk on ruudustikus (ja mitte samas grupis - pole sama klots)?
+            // Kas blokk on ruudustikus (ja mitte samas grupis - pole klots)?
             if (Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y] != null &&
                 Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y].parent != transform)
             { return false; }
