@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108c14a6d92ebd846beed680d81730b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnerObj: {fileID: 9155275880907702726, guid: 053fc671191be644e9de7881180dc40c, type: 3}
+  spawner: {fileID: 0}
   rotationCooldown: 0.6
 --- !u!61 &7776468890993036213
 BoxCollider2D:

@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    public GameObject spawnerObj;
+    public Spawner spawner;
+
     private bool isFollowing = false;
     private float lastRotationTime;
     public float rotationCooldown = 0.1f; // Adjust this cooldown time as needed
 
+    public bool canMove = true;
+
     void Update()
     {
+        spawner = spawnerObj.GetComponent<Spawner>();
+
         if (isFollowing)
         {
             // Get the mouse position in world coordinates
@@ -34,7 +42,16 @@ public class FollowMouse : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Toggle following when the GameObject is clicked
-        isFollowing = !isFollowing;
+        if (canMove)
+        {
+            if (isFollowing)
+            {
+                canMove = false;
+                spawner.SpawnNext();
+            }
+
+            // Toggle following when the GameObject is clicked
+            isFollowing = !isFollowing;
+        }
     }
 }
