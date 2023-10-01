@@ -9,7 +9,7 @@ public class Mänguväli : MonoBehaviour
     public static int kõrgus = 20;
     public static Transform[,] ruudustik = new Transform[laius, kõrgus];
 
-    public static List <Vector2> _keelatudRuudud = new List<Vector2>() 
+    public static Vector2[] _keelatudRuudud = new [] 
     {
         new Vector2(0f, 3f),
         new Vector2(0f, 4f),

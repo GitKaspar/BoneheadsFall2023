@@ -54,25 +54,9 @@ public class FollowMouse : MonoBehaviour
                 transform.Rotate(Vector3.forward * rotationAmount);
                 lastRotationTime = Time.time; // Update the last rotation time
             }
-            /*
-             * Probleem: 
-            if (Input.GetMouseButtonDown(0))
-            {
-                FindObjectOfType<Spawner>().SpawnNext();
-            }
-            */
         }
 
-        // See osa peaks liitma mahapandud klotsi keelatud tsooniga ja lülitama klotsi välja
-        if (!canMove) 
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                Transform squareTransform = transform.GetChild(i);
-                Mänguväli._keelatudRuudud.Add(new Vector2(squareTransform.position.x, squareTransform.position.y));
-            }
-            this.enabled = false;
-        }
+     
     }
 
     void OnMouseDown()
