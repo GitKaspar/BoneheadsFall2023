@@ -5,9 +5,9 @@ using UnityEngine;
 public class Mänguväli : MonoBehaviour
 {
     // Loome ruudustiku. Transform'i järjend on koordinaatide järjend? Aga kolmandat koordinaati ei taha?
-    public static int laius = 10;
-    public static int kõrgus = 20;
-    public static Transform[,] ruudustik = new Transform[laius, kõrgus];
+    public static int width = 10;
+    public static int height = 20;
+    public static Transform[,] ruudustik = new Transform[width, height];
 
 
     public static List <Vector2> _keelatudRuudud = new List<Vector2>()
@@ -28,24 +28,24 @@ public class Mänguväli : MonoBehaviour
             Mathf.Round(vektor.y));
     }
     
-    static bool onKeelualas(Vector2 asend)
+    public static bool isForbidden(Vector2 pos)
     {
         foreach (var keelatudRuut in _keelatudRuudud)
         {
-            if (keelatudRuut != asend) continue;
-            print("Keelatud ruut asendis " + asend);
+            if (keelatudRuut != pos) continue;
+            print("Keelatud ruut asendis " + pos);
             return true;
         }
         return false;
     }
 
     // Kontrollib, kas vektor asub piiride sees ja kõrgemal kui alumine ots.
-    public static bool Piirides(Vector2 asend) 
+    public static bool WithinBounds(Vector2 pos) 
     {
-        return !onKeelualas(asend) &&
-               (int)asend.x >= 0 &&
-               (int)asend.x < laius &&
-               (int)asend.y >= 0;
+        return !isForbidden(pos) &&
+               (int)pos.x >= 0 &&
+               (int)pos.x < width &&
+               (int)pos.y >= 0;
     
         // Meil võib olla vaja implementeerida kontroll, kus vaadeldakse ka y koordinaadi sobivust (ehk isegi spetsiifilisi ridu), kuna meie mänguväli on mitmeti piiratud
     }
@@ -53,7 +53,7 @@ public class Mänguväli : MonoBehaviour
     // NB! POLE MEIE MÄNGUKS VAJA? Kustutab kõik mänguobjektid antud reas
     public static void KustutaRida(int y)
     {
-        for (int i = 0; i < laius; i++)
+        for (int i = 0; i < width; i++)
         {
             Destroy(ruudustik[i, y].gameObject);
             ruudustik[i, y] = null;
@@ -64,7 +64,7 @@ public class Mänguväli : MonoBehaviour
 
     public static void KukutaRida(int y)
     {
-        for (int x = 0; x < laius; ++x)
+        for (int x = 0; x < width; ++x)
         {
             if (ruudustik[x, y] != null)
             {
@@ -82,14 +82,14 @@ public class Mänguväli : MonoBehaviour
     // Kontrollib y's ülespoole jäävaid ridu
     public static void KärbiÜlemisiRidu(int y)
     {
-        for (int i = y; i < kõrgus; ++i)
+        for (int i = y; i < height; ++i)
             KukutaRida(i);
     }
 
     // Kotnrollib, kas rida y on täis.
     public static bool KasRidaTäis(int y)
     {
-        for (int x = 0; x < laius; ++x)
+        for (int x = 0; x < width; ++x)
             if (ruudustik[x, y] == null)
                 return false;
         return true;
@@ -97,7 +97,7 @@ public class Mänguväli : MonoBehaviour
 
     public static void KustutaTervedRead()
     {
-        for(int y = 0; y < kõrgus; ++y)
+        for(int y = 0; y < height; ++y)
         {
             if (KasRidaTäis(y))
             {

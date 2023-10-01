@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class Grupp : MonoBehaviour
 {
+    public static Grupp instance;
+    private Grupp gggg;
+
     // Viimane gravitatsiooninükke aeg
     // float viimaneKukkumine = 0;
 
     void Start()
     {
+
         // Algasend ei sobi.
-        if (!KasOnSobivAsendRuudustikus())
+        if (!IsValidPosition())
         {
             Debug.Log("GAME OVER");
             Destroy(gameObject);
@@ -104,21 +108,54 @@ public class Grupp : MonoBehaviour
         */
     }
 
-    public bool KasOnSobivAsendRuudustikus()
+    public bool IsValidPosition(Vector2 cat)
+    {
+        foreach (Vector2 t in Mänguväli._keelatudRuudud)
+        {
+            if (cat == t)
+            {
+                return false;
+            }
+
+        }
+
+        foreach (Transform child in transform)
+        {
+            Vector2 vektor = Mänguväli.ÜmardaVector2(child.position);
+
+
+            // Kas on piiridest väljas?
+            if (!Mänguväli.WithinBounds(vektor))
+            { return false; }
+
+            // Kas blokk on ruudustikus (ja mitte samas grupis - pole klots)?
+            if (Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y] == null ||
+                Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y] == transform)
+            {
+                continue;
+            }
+            return false;
+        }
+        return true;
+    }
+    public bool IsValidPosition()
     {
         foreach (Transform child in transform)
         {
             Vector2 vektor = Mänguväli.ÜmardaVector2(child.position);
 
-            
+
             // Kas on piiridest väljas?
-            if (!Mänguväli.Piirides(vektor)) 
-            {return false;}
+            if (!Mänguväli.WithinBounds(vektor))
+            { return false; }
 
             // Kas blokk on ruudustikus (ja mitte samas grupis - pole klots)?
-            if (Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y] != null &&
-                Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y].parent != transform)
-            { return false; }
+            if (Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y] == null ||
+                Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y] == transform)
+            {
+                continue;
+            }
+            return false;
         }
         return true;
     }
@@ -126,8 +163,8 @@ public class Grupp : MonoBehaviour
     void värskendaRuudustik()
     {
         // Vanad blokid eemaldatakse ruudustikust
-        for (int y = 0; y < Mänguväli.kõrgus; ++y)
-            for (int x = 0; x < Mänguväli.laius; ++x)
+        for (int y = 0; y < Mänguväli.height; ++y)
+            for (int x = 0; x < Mänguväli.width; ++x)
                 if (Mänguväli.ruudustik[x, y] != null)
                     if (Mänguväli.ruudustik[x, y].parent == transform)
                         Mänguväli.ruudustik[x, y] = null;

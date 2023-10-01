@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class InGameMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
-
     public void GoToMainMenu()
     {
         SceneManager.LoadSceneAsync(0);
