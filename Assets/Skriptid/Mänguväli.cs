@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class Mänguväli : MonoBehaviour
     public static Transform[,] ruudustik = new Transform[laius, kõrgus];
 
 
-    public static readonly Vector2[] _keelatudRuudud = new[]
+    public static List <Vector2> _keelatudRuudud = new List<Vector2>()
 
     {
         new Vector2(0f, 3f),
