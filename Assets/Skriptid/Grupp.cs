@@ -123,6 +123,7 @@ public class Grupp : MonoBehaviour
         return true;
     }
 
+    /*
     void värskendaRuudustik()
     {
         // Vanad blokid eemaldatakse ruudustikust
@@ -137,4 +138,5 @@ public class Grupp : MonoBehaviour
             Mänguväli.ruudustik[(int)vektor.x, (int)vektor.y] = child;
         }
     }
+    */
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    public static FollowMouse instance;
+
     public GameObject spawnerObj;
      Spawner spawner;
 
@@ -59,6 +61,17 @@ public class FollowMouse : MonoBehaviour
                 FindObjectOfType<Spawner>().SpawnNext();
             }
             */
+        }
+
+        // See osa peaks liitma mahapandud klotsi keelatud tsooniga ja lülitama klotsi välja
+        if (!canMove) 
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                Transform squareTransform = transform.GetChild(i);
+                Mänguväli._keelatudRuudud.Add(new Vector2(squareTransform.position.x, squareTransform.position.y));
+            }
+            this.enabled = false;
         }
     }
 
