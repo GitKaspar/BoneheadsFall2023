@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: -7374406741620510901}
   - component: {fileID: -5934167119969990647}
   - component: {fileID: 7877886000895545710}
+  - component: {fileID: 3132438876803745357}
   m_Layer: 0
   m_Name: O-klots1
   m_TagString: Untagged
@@ -148,7 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerObj: {fileID: 5786269455400694432, guid: c8375b52f9aecf0438f5f543e35e08cd, type: 3}
   rotationCooldown: 0.6
-  canMove: 1
 --- !u!61 &7877886000895545710
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194,6 +194,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &3132438876803745357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918314425843884512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de48ba10cf8e4e44788ec23ea419868e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4483236968478484362
 GameObject:
   m_ObjectHideFlags: 0
