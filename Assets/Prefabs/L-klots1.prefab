@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 3915512698295424472}
   m_Layer: 0
   m_Name: L-klots1
-  m_TagString: Untagged
+  m_TagString: Klots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -493,7 +493,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-
 --- !u!1 &8431211970005203734
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,4 +577,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-

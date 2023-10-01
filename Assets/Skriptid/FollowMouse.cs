@@ -74,17 +74,9 @@ public class FollowMouse : MonoBehaviour
         }
     }
 
+
     void OnMouseDown()
     {
-        //foreach (Vector2 t in Mänguväli._keelatudRuudud) 
-        //{
-        //    if (catVec == t) 
-        //    {
-
-        //        return;
-        //    }
-                
-        //}
 
         if (_grupp.IsValidPosition(catVec))
         {
@@ -100,4 +92,6 @@ public class FollowMouse : MonoBehaviour
             isFollowing = !isFollowing;
         }
     }
+
+
 }
