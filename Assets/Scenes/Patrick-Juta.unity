@@ -1101,8 +1101,8 @@ GameObject:
   - component: {fileID: 1286326412}
   - component: {fileID: 1286326411}
   - component: {fileID: 1286326410}
-  - component: {fileID: 1286326413}
   - component: {fileID: 1286326414}
+  - component: {fileID: 1286326415}
   m_Layer: 0
   m_Name: J-klots
   m_TagString: Klots
@@ -1219,22 +1219,6 @@ Transform:
   - {fileID: 55753326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1286326413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286326409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31cfa34a2e6ca2c489b6711a1ea97357, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFollowing: 0
-  lastRotationTime: 0
-  rotationCooldown: 0.6
-  _collisionTracker: {fileID: 0}
 --- !u!114 &1286326414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,6 +1231,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c890ff7429a94e99a4ab5d5e8ac8923e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1286326415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286326409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108c14a6d92ebd846beed680d81730b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationCooldown: 0.1
 --- !u!1 &1354937835
 GameObject:
   m_ObjectHideFlags: 0

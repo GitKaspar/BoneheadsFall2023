@@ -104,7 +104,7 @@ public class Grupp : MonoBehaviour
         */
     }
 
-    bool KasOnSobivAsendRuudustikus()
+    public bool KasOnSobivAsendRuudustikus()
     {
         foreach (Transform child in transform)
         {

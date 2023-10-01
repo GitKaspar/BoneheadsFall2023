@@ -62,7 +62,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108c14a6d92ebd846beed680d81730b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnerObj: {fileID: 5786269455400694432, guid: c8375b52f9aecf0438f5f543e35e08cd, type: 3}
   rotationCooldown: 0.6
+  canMove: 1
 --- !u!61 &-2561966644645946110
 BoxCollider2D:
   m_ObjectHideFlags: 0
