@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    public GameObject spawnerObj;
+     Spawner spawner;
+
     private bool isFollowing = false;
     private float lastRotationTime;
     public float rotationCooldown = 0.1f; // Adjust this cooldown time as needed
@@ -14,19 +18,28 @@ public class FollowMouse : MonoBehaviour
         _grupp = GetComponent<Grupp>();
     }
 
+    public bool canMove = true;
+
+    void Start()
+    {
+        spawner = spawnerObj.GetComponent<Spawner>();
+    }
+
     void Update()
     {
+
+
         if (isFollowing)
         {
             // Get the mouse position in world coordinates
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             // Set the GameObject's position to the mouse position
-            // Snap siin: hiire positsioon ümardatakse
+            // Snap siin: hiire positsioon Ã¼mardatakse
             if (_grupp.KasOnSobivAsendRuudustikus())
             {
-                Vector2 ümardatud = Mänguväli.ÜmardaVector2(new Vector2(mousePosition.x, mousePosition.y));
-                transform.position = new Vector3(ümardatud.x, ümardatud.y, transform.position.z);
+                Vector2 Ã¼mardatud = MÃ¤nguvÃ¤li.ÃœmardaVector2(new Vector2(mousePosition.x, mousePosition.y));
+                transform.position = new Vector3(Ã¼mardatud.x, Ã¼mardatud.y, transform.position.z);
             }
             else
             {
@@ -56,7 +69,17 @@ public class FollowMouse : MonoBehaviour
     void OnMouseDown()
     {
         if (_grupp.KasOnSobivAsendRuudustikus())
+        {
+            if (canMove)
+            {
+                if (isFollowing)
+                {
+                    canMove = false;
+                    spawner.SpawnNext();
+                }
+             }
             // Toggle following when the GameObject is clicked
             isFollowing = !isFollowing;
+        }
     }
 }
