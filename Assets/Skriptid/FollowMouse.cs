@@ -13,16 +13,12 @@ public class FollowMouse : MonoBehaviour
     public float rotationCooldown = 0.1f; // Adjust this cooldown time as needed
     private Grupp _grupp;
 
-    private void Start()
-    {
-        _grupp = GetComponent<Grupp>();
-    }
-
     public bool canMove = true;
 
     void Start()
     {
         spawner = spawnerObj.GetComponent<Spawner>();
+        _grupp = GetComponent<Grupp>();
     }
 
     void Update()
