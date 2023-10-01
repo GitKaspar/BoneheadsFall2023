@@ -15,10 +15,14 @@ public class FollowMouse : MonoBehaviour
     public float rotationCooldown = 0.1f; // Adjust this cooldown time as needed
     private Grupp _grupp;
 
+    private Vector2 catVec;
     public bool canMove = true;
 
     void Start()
     {
+
+        catVec = new Vector2(this.transform.position.x, this.transform.position.y);
+
         spawner = spawnerObj.GetComponent<Spawner>();
         _grupp = GetComponent<Grupp>();
     }
@@ -34,7 +38,7 @@ public class FollowMouse : MonoBehaviour
 
             // Set the GameObject's position to the mouse position
             // Snap siin: hiire positsioon ümardatakse
-            if (_grupp.KasOnSobivAsendRuudustikus())
+            if (_grupp.IsValidPosition())
             {
                 Vector2 ümardatud = Mänguväli.ÜmardaVector2(new Vector2(mousePosition.x, mousePosition.y));
                 transform.position = new Vector3(ümardatud.x, ümardatud.y, transform.position.z);
@@ -70,9 +74,11 @@ public class FollowMouse : MonoBehaviour
         }
     }
 
+
     void OnMouseDown()
     {
-        if (_grupp.KasOnSobivAsendRuudustikus())
+
+        if (_grupp.IsValidPosition(catVec))
         {
             if (canMove)
             {
@@ -86,4 +92,6 @@ public class FollowMouse : MonoBehaviour
             isFollowing = !isFollowing;
         }
     }
+
+
 }

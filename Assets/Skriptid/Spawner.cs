@@ -29,6 +29,6 @@ public class Spawner : MonoBehaviour
     {
         // Isimene objekt luuakse
         SpawnNext();
-        SpawnKeelatud();
+       // SpawnKeelatud();
     }
 }
