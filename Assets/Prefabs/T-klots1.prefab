@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -9087292615849671403}
   - component: {fileID: 5722663816994160709}
   - component: {fileID: 96656026433327633}
+  - component: {fileID: -1138981368511311801}
   m_Layer: 0
   m_Name: T-klots1
   m_TagString: Untagged
@@ -62,7 +63,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerObj: {fileID: 5786269455400694432, guid: c8375b52f9aecf0438f5f543e35e08cd, type: 3}
   rotationCooldown: 0.6
-  canMove: 1
 --- !u!61 &5722663816994160709
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +153,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+
 --- !u!1 &7303717307901971153
 GameObject:
   m_ObjectHideFlags: 0

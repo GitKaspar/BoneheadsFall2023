@@ -15,7 +15,7 @@ public class FollowMouse : MonoBehaviour
     public float rotationCooldown = 0.1f; // Adjust this cooldown time as needed
     private Grupp _grupp;
 
-    public bool canMove = true;
+    public static bool canMove = true;
 
     void Start()
     {
