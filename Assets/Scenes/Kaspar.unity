@@ -259,6 +259,7 @@ MonoBehaviour:
   - {fileID: 2959947475972769817, guid: c16f257f414bad24f9bd6fd2342ffe8d, type: 3}
   - {fileID: 3720216614281261283, guid: f2bf09e8f5f851f44b29378eefc2db8c, type: 3}
   - {fileID: 6542791680095747919, guid: 5fb151adbcecaad4897b6287223f3701, type: 3}
+  KeelatudPrefab: {fileID: 8414899439060393318, guid: b96504dfeed95ee4ea7e86b801a02446, type: 3}
 --- !u!1 &786727118
 GameObject:
   m_ObjectHideFlags: 0
