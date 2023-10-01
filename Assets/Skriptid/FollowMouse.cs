@@ -6,7 +6,7 @@ using UnityEngine;
 public class FollowMouse : MonoBehaviour
 {
     public GameObject spawnerObj;
-    public Spawner spawner;
+     Spawner spawner;
 
     private bool isFollowing = false;
     private float lastRotationTime;
@@ -14,9 +14,14 @@ public class FollowMouse : MonoBehaviour
 
     public bool canMove = true;
 
-    void Update()
+    void Start()
     {
         spawner = spawnerObj.GetComponent<Spawner>();
+    }
+
+    void Update()
+    {
+
 
         if (isFollowing)
         {
