@@ -238,6 +238,7 @@ BoxCollider2D:
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &2875782050593562635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,3 +421,6 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 =======
 >>>>>>> main
+=======
+
+>>>>>>> 9648a955178e1cc20662d556b275ffb0ee868a11
