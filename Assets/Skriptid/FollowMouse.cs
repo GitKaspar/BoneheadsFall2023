@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
-    public static FollowMouse instance;
-
     public GameObject spawnerObj;
      Spawner spawner;
 
@@ -15,7 +13,7 @@ public class FollowMouse : MonoBehaviour
     public float rotationCooldown = 0.1f; // Adjust this cooldown time as needed
     private Grupp _grupp;
 
-    public static bool canMove = true;
+    public bool canMove = true;
 
     void Start()
     {
@@ -56,7 +54,6 @@ public class FollowMouse : MonoBehaviour
             }
         }
 
-     
     }
 
     void OnMouseDown()
