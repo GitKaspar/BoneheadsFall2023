@@ -239,6 +239,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+
 --- !u!1 &5376723813290067873
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +324,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+
 --- !u!1 &7303717307901971153
 GameObject:
   m_ObjectHideFlags: 0
