@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     // Klotside grupp
     public GameObject[] grupid;
+    public GameObject KeelatudPrefab;
 
     public void SpawnNext()
     {
@@ -15,12 +16,19 @@ public class Spawner : MonoBehaviour
         Instantiate(grupid[i], transform.position, Quaternion.identity);
     }
 
+    public void SpawnKeelatud()
+    {
+        foreach(Vector2 keelatud in Mänguväli._keelatudRuudud)
+        {
+            Instantiate(KeelatudPrefab, new Vector3(keelatud.x, keelatud.y, 0), Quaternion.identity);
+        }
+    }
+
+
     private void Start()
     {
         // Isimene objekt luuakse
         SpawnNext();
+        SpawnKeelatud();
     }
-
-
-
 }
